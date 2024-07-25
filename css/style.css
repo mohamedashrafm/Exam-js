@@ -1,0 +1,382 @@
+:root{
+    --main-color :#0075ff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    text-transform: capitalize;
+    font-family: "Alexandria", sans-serif;
+    font-weight: 300;
+    display: flex;
+    background-color: #000;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+button{
+    cursor: pointer;
+}
+/* ==============================
+ LOADING
+==================================*/
+.loading{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    z-index: 1000000000000;
+}
+/* ==============================
+ DRAWER
+==================================*/
+.drawer{
+    position: relative;
+    z-index: 100000;
+    width: 1.8cm;
+}
+.drawer_container{
+    position: fixed;
+    top: 0;
+    left: -7cm;
+    width: 7cm;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 25px;
+    transition: .5s;
+}
+.drawer_container a{
+    color: #fff;
+}
+.drawer_container ul{
+    list-style-type: none;
+    display: none;
+}
+.drawer_container ul li{
+    margin: 20px 0;
+    cursor: pointer;
+    transition: .5s;
+    transform: translate(-150px , 100px);
+    animation: drawer .5s 1 forwards;
+    &:hover{
+        color: var(--main-color);
+    }
+}
+.drawer_container ul li:nth-child(1){
+    animation-delay: .2s;
+}
+.drawer_container ul li:nth-child(2){
+    animation-delay: .4s;
+}
+.drawer_container ul li:nth-child(3){
+    animation-delay: .6s;
+}
+.drawer_container ul li:nth-child(4){
+    animation-delay: .8s;
+}
+.drawer_container ul li:nth-child(5){
+    animation-delay: 1s;
+}
+@keyframes drawer{
+    from{
+        transform: translate(-150px , 100px);
+    }
+    to{
+        transform: translate(0,0);
+    }
+}
+.drawer_container .social{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.drawer_control{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1.8cm;
+    height: 100%;
+    background-color: #fff;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    transition: .5s;
+}
+.drawer_control img{
+    width: 50px;
+}
+.drawer_control .menu{
+    font-size: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+.drawer_control .menu:hover{
+    color: var(--main-color);
+}
+/* CLASS ADD BY JS */
+.drawer_show .drawer_container{
+    left: 0;
+}
+.drawer_show .drawer_control{
+    left: 7cm !important;
+}
+/* ------------------ */
+/* ==============================
+ MAIN
+==================================*/
+.main,
+.search_container,
+.all_categories,
+.filter_all_categories,
+.filter_all_Ingredients,
+.filter_all_area{
+    padding: 40px 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,auto));
+    justify-content: center;
+    gap: 20px;
+    /* display: none; */
+}
+.filter_all_area,.all_area,
+.filter_all_categories,
+.filter_all_Ingredients,
+.all_Ingredients,
+.all_categories
+{
+     display: none; 
+
+}
+main section,
+.search_container section,
+.all_categories section,
+.filter_all_Ingredients section,
+.filter_all_categories section,
+.filter_all_area section{
+    max-width: 320px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+main section img,
+.search_container section img,
+.all_categories section img,
+.filter_all_Ingredients section img,
+.filter_all_categories section img,
+.filter_all_area section img{
+    width: 100%;
+}
+main section .overlaw,
+.search_container section .overlaw,
+.all_categories section .overlaw,
+.filter_all_Ingredients section .overlaw,
+.filter_all_categories section .overlaw,
+.filter_all_area section .overlaw{
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    background-color: #ffffffb0;
+    left: 0;
+    bottom: 3px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 5;
+    font-size: 18px;
+    overflow: hidden;
+    transition: .5s;
+}
+main section:hover .overlaw,
+.search_container section:hover .overlaw,
+.filter_all_Ingredients section:hover .overlaw,
+.all_categories section:hover .overlaw,
+.filter_all_categories section:hover .overlaw,
+.filter_all_area section:hover .overlaw{
+    height: 100%;
+    bottom: 0 !important;
+}
+/* ==============================
+ SINGLE PRODUCT
+==================================*/
+.single_product,
+.single_Ingredients,
+.single_area,
+.single_categories{
+    display: flex;
+    gap: 20px;
+    padding: 40px 20px;
+    color: #fff;
+    padding-left: 2cm;
+    display: none;
+}
+.single_product  img,
+.single_Ingredients  img,
+.single_categories  img,
+.single_area img{
+    max-width: 350px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.single_product .left .describtion,
+.single_Ingredients .left .describtion,
+.single_categories .left .describtion,
+.single_area .left .describtion
+{
+    margin: 20px 0;
+    font-size: 14px;
+    line-height: 1.8;
+}
+.single_product .left .item,
+.single_Ingredients .left .item,
+.single_categories .left .item,
+.single_area .left .item{
+    font-size: 24px;
+    margin: 10px 0;
+}
+.single_product .left .recipes_items,
+.single_Ingredients .left .recipes_items,
+.single_categories .left .recipes_items,
+.single_area .left .recipes_items{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+}
+.single_product .left .recipes_items span,
+.single_product .left .tags_items span,
+.single_Ingredients .left .recipes_items span,
+.single_Ingredients .left .tags_items span,
+.single_categories .left .recipes_items span,
+.single_categories .left .tags_items span,
+.single_area .left .recipes_items span,
+.single_area .left .tags_items span{
+    display: block;
+    padding: 8px;
+    border-radius: 10px;
+    color: #055160;
+    background-color: #cff4fc;
+    width: fit-content;
+}
+.single_product .left .tags_items span,
+.single_Ingredients .left .tags_items span,
+.single_categories .left .tags_items span,
+.single_area .left .tags_items span{
+    background-color: #f8d7da;
+    color: #842029;
+}
+.single_product .left .two_links
+.single_Ingredients .left .two_links
+.single_categories .left .two_links
+.single_area .left .two_links{
+    margin-top: 40px;
+}
+.single_product .left .two_links a,
+.single_Ingredients .left .two_links a,
+.single_categories .left .two_links a,
+.single_area .left .two_links a{
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: .5s;
+    background-color: green;
+    &.link2{
+        background-color: #f00;
+    }
+    &:hover{
+        opacity: .9;
+    }
+}
+@media(max-width:800px){
+    .single_product,
+    .single_Ingredients,
+    .single_categories,
+    .single_area{
+        flex-direction: column;
+    }
+    .single_product .right,
+    .single_Ingredients .right,
+    .single_categories .right,
+    .single_area .right{
+        text-align: center;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #444;
+    }
+}
+
+/* <!-- ========== START ALL Area ========= --> */
+.all_area,
+.all_Ingredients{
+    padding: 40px 20px;
+    width: 100%;
+    display: grid;
+    display: none;
+    color: #fff;
+    grid-template-columns: repeat(auto-fit,minmax(280px,auto));
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+.all_area section,
+.all_Ingredients section{
+    max-width: 320px;
+}
+.all_area section .icon,
+.all_Ingredients section .icon{
+  font-size: 4em;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: "Font Awesome 6 Free";
+}
+.all_area section h3,
+.all_Ingredients section h3{
+  font-size:30px;
+  font-weight: 300;
+}
+ /* ======== search=========== */
+
+ .search input::placeholder{
+    color: gray;
+
+ }
+
+ .all_categories .overlaw{
+    padding: 15px;
+    bottom: -100px !important ;
+    font-size: 14px !important;
+ }
+ .all_categories .overlaw p{
+    height: 4cm;
+    overflow: hidden;
+ }
+
+ .all_Ingredients h3{
+    font-size: calc(1.3rem + .6vw);
+ }
+
+ .all_Ingredients p{
+    height: 2cm;
+    overflow: hidden;
+ }

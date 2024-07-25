@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>web page</title>
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+    <!-- ========== START LOADING ============== -->
+    <div class="loading" id="loading">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+    </div>
+    <!-- ========== END LOADING ============== -->
+    <!-- ========== START DRAWER ============ -->
+    <div class="drawer">
+        <!-- DRAWER CONTAINER -->
+        <div class="drawer_container">
+            <ul class="items">
+                <li onclick="ShowAllSearch()">Search</li>
+                <li onclick="ShowAllCategories()">Categories</li>
+                <li onclick="ShowAllArea()">Area</li>
+                <li onclick="ShowAllIngredients()">Ingredients</li>
+                <li onclick="ShowAllContact()">Contact Us</li>
+            </ul>
+            <div class="foot">
+                <div class="social">
+                    <p><a href="#"><i class="fa-brands fa-facebook"></i></a></p>
+                    <p><a href="#"><i class="fa-brands fa-twitter"></i></a></p>
+                    <p><i class="fa-solid fa-globe"></i></p>
+                </div>
+                <div class="copyright">
+                    <p>Copyright Â &copy; 2024 All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+        <!-- DRAWER CONTROL -->
+        <div class="drawer_control">
+            <div class="logo" onclick="mainContainer()"><img src="images/logo.png" alt="logo"></div>
+            <div class="menu" id="menu"><i class="fa-solid fa-bars-staggered"></i></div>
+            <div class="two_icons">
+                <p><i class="fa-solid fa-globe"></i></p>
+                <p><i class="fa-solid fa-share-nodes"></i></p>
+            </div>
+        </div>
+    </div>
+    <!-- ========== END DRAWER ============ -->
+
+    <!-- ========== START MAIN PAGE ============ -->
+    <main class="main" id="main"></main>
+    <!-- ========== END MAIN PAGE ============ -->
+
+    <!-- ========== START SINGLE PRODUCT ========= -->
+    <div class="single_product"></div>
+    <!-- ========== END SINGLE PRODUCT ========= -->
+
+    <!-- ========== START ALL CATEGORIES ========= -->
+    <div class="all_categories" id="all_categories"></div>
+    <!-- ========== END ALL CATEGORIES ========= -->
+    <!-- ========== START ALL CATEGORIES ========= -->
+    <div class="single_categories" id="single_categories"></div>
+    <!-- ========== END ALL CATEGORIES ========= -->
+
+    <!-- ========== START ALL CATEGORIES ========= -->
+    <div class="filter_all_categories " id="filter_all_categories"></div>
+    <!-- ========== END ALL CATEGORIES ========= -->
+
+    <!-- ========== START ALL AREA ========= -->
+    <div class="all_area" id="all_area"></div>
+    <!-- ========== END ALL AREA ========= -->
+    <!-- ========== START ALL AREA ========= -->
+    <div class="filter_all_area" id="filter_all_area"></div>
+    <!-- ========== END ALL AREA ========= -->
+    <!-- ========== START ALL AREA ========= -->
+    <div class="single_area" id="single_area"></div>
+    <!-- ========== END ALL AREA ========= -->
+
+    <!-- ========== START ALL Ingredients ========= -->
+    <div class="all_Ingredients" id="all_Ingredients"></div>
+    <!-- ========== END ALL Ingredients ========= -->
+    <!-- ========== START ALL Ingredients ========= -->
+    <div class="filter_all_Ingredients" id="filter_all_Ingredients"></div>
+    <!-- ========== END ALL Ingredients ========= -->
+    <!-- ========== START ALL Ingredients ========= -->
+    <div class="single_Ingredients" id="single_Ingredients"></div>
+    <!-- ========== END ALL Ingredients ========= -->
+    <!-- ========== START single_categories ========= -->
+    <div class=" single_categories" id="single_categories">
+    </div>
+    <!-- ========== END single_categories ========= -->
+    <!-- ========== START ALL Area ========= -->
+    <div class="all_area" id="all_area"> </div>
+    <!-- ========== END ALL Area ========= -->
+
+    <!-- ========== START Filter ALL Area ========= -->
+    <div class=" filter_all_area" id="filter_all_area">
+
+    </div>
+    <!-- ========== END Filter ALL Area ========= -->
+
+    <!-- ========== START single_area ========= -->
+    <div class=" single_area" id="single_area">
+
+    </div>
+    <!-- ========== END single_area =========  -->
+
+
+    <!-- ========== start contact us ========= -->
+
+    <div class="contact d-none vh-100 bg-black w-100  justify-content-center align-items-center flex-column ">
+        <div class="containre ">
+            <div class="row g-4 ">
+                <div class="col-md-6 ">
+
+                    <input class="form-control w-100 " id="nameInput" type="text" placeholder="Enter Your Name..."
+                        aria-label="readonly input example">
+
+                    <div class="alert alert-danger d-none" id="alert_name">
+                        <p>
+                            Special characters and numbers not allowed
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+
+                    <input class="form-control w-100 " id="emailInput" type="text" placeholder="Enter Your Name..."
+                        aria-label="readonly input example">
+
+                    <div class="alert alert-danger d-none" id="alert_input">
+                        <p>
+                            Email not valid *exemple@yyy.zzz
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+
+                    <input class="form-control w-100 " id="phoneInput" type="text" placeholder="Enter Your Name..."
+                        aria-label="readonly input example">
+
+                    <div class="alert alert-danger d-none" id="alert_phone">
+                        <p>
+                            Enter valid Phone Number
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+
+                    <input class="form-control w-100 " id="ageInput" type="text" placeholder="Enter Your Name..."
+                        aria-label="readonly input example">
+
+                    <div class="alert alert-danger d-none" id="alert_age">
+                        <p>
+                            Enter valid age
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+
+                    <input class="form-control w-100 " id="passwordInput" type="text" placeholder="Enter Your Name..."
+                        aria-label="readonly input example">
+
+                    <div class="alert alert-danger d-none" id="alert_password">
+                        <p>
+
+                            •
+                            Enter valid password *Minimum eight characters, at least one letter and one number:*
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+
+                    <input class="form-control w-100 " id="repasswordInput" type="text" placeholder="Enter Your Name..."
+                        aria-label="readonly input example">
+
+                    <div class="alert alert-danger d-none" id="alert_repassword">
+                        <p>
+                            Enter valid repassword
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+            <div class="button mt-3 d-flex justify-content-center align-items-center ">
+                <button type="button" class="btn btn-outline-danger">submit</button>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- ========== END contact us ========= -->
+ 
+    <!-- ========== START SEARCH ========= -->
+    <div class="search d-none w-100">
+
+        <div class="container mt-3">
+            <div class="search_inputs">
+                <div class="row ">
+                    <div class="col-md-6">
+                        <input oninput="search(this.id , this.value)" type="text"
+                            class="form-control bg-transparent text-white w-100" placeholder="Search By Name"
+                            id="searchName" autocomplete="off">
+                    </div>
+                    <div class="col-md-6">
+                        <input oninput="search(this.id , this.value)" type="text"
+                            class="form-control bg-transparent text-white w-100" placeholder="Search By First Letter"
+                            id="searchLetter" maxlength="1" autocomplete="off">
+                    </div>
+
+                </div>
+            </div>
+            <div class="search_container"></div>
+        </div>
+
+    </div>
+    <!-- ========== END SEARCH ========= -->
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
